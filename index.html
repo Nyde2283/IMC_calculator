@@ -1,49 +1,21 @@
-<!DOCTYPE html>
-
-<!-- Certaines animations ne marchent pas sur Firefox -->
-
-<html>
-    <head>
-        <title>Calcuteur d'IMC</title>
-        <link rel="icon" href="images/favicon.png">
-        <meta charset="utf-8">
-        <link rel="stylesheet" href="style.css"/>
-    </head>
-    <body>
-        <section id="left_side">
-            <div id="form_div">
-            <h1>Calculer votre IMC :</h1>
-                <form>
-                    <div>
-                        <input type="number" step="0.1"id="input_mass" autofocus>
-                        <div class="input_comment" id="input_comment_mass">Poids (kg)</div>
-                        <div class="alert" id="alert_mass"></div>
-                    </div>
-
-                    <div class="input_div">
-                        <input type="number" step="0.01"id="input_height">
-                        <div class="input_comment" id="input_comment_height">Taille (m)</div>
-                        <div class="alert" id="alert_height"></div>
-                    </div>
-                    
-                </form>
-                
-                <button id="button">Calculer</button>
-            </div>
-        </section>
-            
-        <section id="right_side">
-            <span id="title">RESULTATS</span>
-            <img src="images/graph.png" id="graph">
-            <img src="images/pin.png" id="pin">
-            <p id="commentaire"></p>
-
-            <span id="avertissement">
-                Nous vous rappelons que l'IMC est un indicateur aproximatif, pour plus d'informations 
-                <a href="https://fr.wikipedia.org/wiki/Indice_de_masse_corporelle#R%C3%A9serves" title="page Wikipédia" target="_blank">cliquez ici</a>.
-            </span>
-        </section>
-
-        <script src="main.js"></script>
-    </body>
-</html>
+<!DOCTYPE html><html><head><title>Calcuteur d'IMC</title><link rel=icon href=https://nyde2283.github.io/IMC_calculator/images/favicon.png><meta charset=utf-8></head><body><section id=left_side><div id=form_div><h1>Calculer votre IMC :</h1><form><div><input type=number step="0.1"id=input_mass autofocus><div class=input_comment id=input_comment_mass>Poids (kg)</div><div class=alert id=alert_mass></div></div><div class=input_div><input type=number step="0.01"id=input_height><div class=input_comment id=input_comment_height>Taille (m)</div><div class=alert id=alert_height></div></div></form><button id=button>Calculer</button></div></section><section id=right_side><span id=title>RESULTATS</span><img src=https://nyde2283.github.io/IMC_calculator/images/graph.png id=graph><img src=https://nyde2283.github.io/IMC_calculator/images/pin.png id=pin><p id=commentaire></p><span id=avertissement> Nous vous rappelons que l'IMC est un indicateur aproximatif, pour plus d'informations <a href=https://fr.wikipedia.org/wiki/Indice_de_masse_corporelle#R%C3%A9serves title="page Wikipédia" target=_blank>cliquez ici</a>. </span></section><style>@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');html,body{margin:0;height:100%;width:100%;background-color:#f4f4f6;font-family:'Roboto',Verdana,Geneva,Tahoma,sans-serif}#left_side{float:left;height:100%;width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:1s cubic-bezier(0.5,0,0.5,1)}#right_side{float:right;height:0;width:0;display:flex;flex-direction:column;align-items:center;justify-content:center;display:none;opacity:0;transition:1s cubic-bezier(0.5,0,0.5,1)}#title{margin-bottom:10px;font-weight:700;font-size:xxx-large}#graph{margin-top:20px;margin-bottom:20px;position:relative;width:700px;height:389px}#pin{width:30px;height:30px;transform:translateX(-306px) translateY(-92px);transition:1s cubic-bezier(0.5,0,0.5,1)}p{width:700px}#avertissement{position:absolute;bottom:30px;font-size:12px}#form_div{background-color:white;display:flex;flex-direction:column;align-items:center;border:1px solid #bcc0c7;border-radius:8px}form{display:flex;flex-direction:column;align-items:center;padding:48px}input{border:1px solid #bcc0c7;border-radius:4px;height:30px;width:195px;font-size:15px;padding-left:7px}input:focus{outline:0}.input_div{padding-bottom:5px}.input_comment{pointer-events:none;color:#5f6368;background-color:white;transform-origin:bottom left;transform:translateX(6px) translateY(-27px);width:75px;padding-inline:5px;transition:150ms cubic-bezier(0.4,0,0.2,1);-moz-user-select:none;-webkit-user-select:none;user-select:none}input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}input[type=number]{-moz-appearance:textfield}button{background-color:#79be20;color:white;height:45px;width:86px;margin-top:6px;border:1px solid #bcc0c7;border-radius:5px;transform:translateY(-48px);font-weight:bold;-moz-user-select:none;-webkit-user-select:none;user-select:none;transition:border 280ms cubic-bezier(0.4,0,0.2,1),box-shadow 280ms cubic-bezier(0.4,0,0.2,1)}button:hover{background-color:#70ae1e;cursor:pointer;box-shadow:black 3px 3px 20px -12px}button:active{background-color:#649d1b;box-shadow:black 3px 3px 20px -12px}.alert{font-weight:lighter;font-size:11px;color:red;margin-left:3px;transform:translateY(-16px);pointer-events:none;-moz-user-select:none;-webkit-user-select:none;user-select:none}</style><script>var $jscomp=$jscomp||{};$jscomp.scope={};$jscomp.createTemplateTagFirstArg=function(a){return a.raw=a};$jscomp.createTemplateTagFirstArgWithRaw=function(a,b){a.raw=b;return a};
+var left_side=document.getElementById("left_side"),right_side=document.getElementById("right_side"),top_side=left_side,bottom_side=right_side,input_mass=document.getElementById("input_mass"),input_comment_mass=document.getElementById("input_comment_mass"),input_height=document.getElementById("input_height"),input_comment_height=document.getElementById("input_comment_height"),button=document.getElementById("button"),alert_mass=document.getElementById("alert_mass"),alert_height=document.getElementById("alert_height"),
+mass_el={input:input_mass,comment:input_comment_mass,alert:alert_mass},height_el={input:input_height,comment:input_comment_height,alert:alert_height},graph=document.getElementById("graph"),pin=document.getElementById("pin"),commentaire=document.getElementById("commentaire"),hardware,enter_press=new CustomEvent("enter_press");function test_enter(a){"Enter"===a.code&&a.srcElement.dispatchEvent(enter_press)}mass_el.input.addEventListener("keydown",test_enter);
+height_el.input.addEventListener("keydown",test_enter);function inputs_add_listener_enter(a){mass_el.input.addEventListener("enter_press",a);height_el.input.addEventListener("enter_press",a)}function inputs_remove_listener_enter(a){mass_el.input.removeEventListener("enter_press",a);height_el.input.removeEventListener("enter_press",a)}
+function form_check(){function a(a,b,c){if(""===a.input.value||a.input.value<b||a.input.value>c)return turn_input_wrong(a),!1;turn_input_correct(a);return!0}var b=a(mass_el,40,130),c=a(height_el,1.5,2.1);b?c||height_el.input.focus():mass_el.input.focus();return b&&c}function calcul(){return Math.round(mass_el.input.value/Math.pow(height_el.input.value,2)*10)/10}
+function place_pin(){pin.style.transform="translateX("+Math.round(10.75*(100*height_el.input.value-150)-306)+"px) translateY("+Math.round(-3.73*(mass_el.input.value-40)-92)+"px)"}
+function process(){if(form_check()){var a=calcul();place_pin();commentaire.innerHTML=40<=a?"Votre IMC est de <b>"+Math.round(a)+"<b>, elle correspond à une <b>obésité sévère</b>.\n            <br><br>\n            Nous vous conseillons de consulter un médecin dans les plus brefs délais si ce n’est pas déjà fait.             Si vous tombez malade vous avez de très grandes chances de subir des complications, soyez très vigilant sur votre alimentation et votre activité physique !":35<=a?"Votre IMC est de <b>"+
+Math.round(a)+"</b>, elle correspond à une <b>obésité moyenne</b>.\n            <br><br>\n            Nous vous conseillons de consulter un médecin.             Si vous tombez malade vous avez de grandes chances de subir des complications, soyez vigilant sur votre alimentation et votre activité physique.":30<=a?"Votre IMC est de <b>"+Math.round(a)+"</b>, elle correspond à une <b>faible obésité</b>.\n            <br><br>\n            Vous avez plus de chances de tomber malade que les autres personnes donc vous devriez faire attention à votre alimentation et votre activité physique.":
+25<=a?"Votre IMC est de <b>"+Math.round(a)+"</b>, elle correspond à un <b>surpoids</b>.\n            <br><br>\n            Nous vous conseillons de faire attention à votre alimentation et votre activité physique même si cela n’est pas impératif.":18.5<=a?"Votre IMC est de <b>"+Math.round(a)+"</b>, elle correspond à un poids <b>idéal</b>.\n            <br><br>\n            Tout va bien, rien à signaler.":16.5<=a?"Votre IMC est de <b>"+Math.round(a)+"</b>, elle correspond à un <b>sous-poids</b>.\n            <br><br>\n            Vous devriez manger un peu plus, faire une activité physique ou consulter un médecin si cela est dû à une maladie.":
+"Votre IMC est de <b>"+Math.round(a)+"</b>, elle correspond à une <b>sous nutrition</b>.\n            <br><br>\n            Il est urgent que vous alliez voir un médecin, votre état est aussi grave que celui d’une personne en obésité sévère !"}}
+function pc_launch(){form_check()&&(process(),left_side.style.width="40%",right_side.style.width="60%",setTimeout(function(){right_side.style.transition="0.5s cubic-bezier(0.5, 0, 0.5, 1)";left_side.style.boxShadow="black -20px 0px 20px";right_side.style.boxShadow="black 20px 0px 20px"},500),setTimeout(function(){right_side.style.display="flex"},1E3),setTimeout(function(){right_side.style.opacity=1},1020),button.removeEventListener("click",pc_launch),inputs_remove_listener_enter(pc_launch),button.addEventListener("click",
+process),inputs_add_listener_enter(process),window.removeEventListener("resize",prepare_before_launch),window.addEventListener("resize",update_size))}
+function mobile_launch(){form_check()&&(process(),top_side.style.height="40%",bottom_side.style.height="60%",setTimeout(function(){bottom_side.style.transition="0.5s cubic-bezier(0.5, 0, 0.5, 1)";top_side.style.boxShadow="black 0px -15px 20px";bottom_side.style.boxShadow="black 0px 15px 20px"},500),setTimeout(function(){bottom_side.style.display="flex"},1E3),setTimeout(function(){bottom_side.style.opacity=1},1020),button.removeEventListener("click",mobile_launch),inputs_remove_listener_enter(mobile_launch),
+button.addEventListener("click",process),inputs_add_listener_enter(process),window.removeEventListener("resize",prepare_before_launch),window.addEventListener("resize",update_size))}
+function prepare_before_launch(){1200<window.innerWidth?(right_side.style.height="100%",hardware="pc",button.removeEventListener("click",mobile_launch),inputs_remove_listener_enter(mobile_launch),button.addEventListener("click",pc_launch),inputs_add_listener_enter(pc_launch)):(bottom_side.style.width="100%",hardware="mobile",button.removeEventListener("click",pc_launch),inputs_remove_listener_enter(pc_launch),button.addEventListener("click",mobile_launch),inputs_add_listener_enter(mobile_launch))}
+function del_anim(){left_side.style.transition="none";right_side.style.transition="none"}function pc_resize(){left_side.style.width="40%";right_side.style.width="60%";left_side.style.height="100%";right_side.style.height="100%";left_side.style.boxShadow="black -20px 0px 20px";right_side.style.boxShadow="black 20px 0px 20px"}
+function mobile_resize(){top_side.style.width="100%";bottom_side.style.width="100%";top_side.style.height="40%";bottom_side.style.height="60%";top_side.style.boxShadow="black 0px -15px 20px";bottom_side.style.boxShadow="black 0px 15px 20px"}function update_size(){del_anim();1200<window.innerWidth&&"pc"!==hardware?(pc_resize(),hardware="pc"):1200>=window.innerWidth&&"mobile"!==hardware&&(mobile_resize(),hardware="mobile")}
+function input_selected(a){a.style.transform="translateX(10px) translateY(-48px) scale(0.6)";a.style.color="#5f6368"}function input_selected_red(a){a.style.transform="translateX(10px) translateY(-48px) scale(0.6)";a.style.color="red"}function input_deselected(a){a.style.transform="translateX(6px) translateY(-27px)";a.style.color="#5f6368"}function test_deselection(a){""===a.input.value&&input_deselected(a.comment)}
+function turn_input_wrong(a){a.input.style.border="1px solid red";a.alert.innerHTML=a.input===input_mass?"Saisissez une valeur entre 40 et 130":"Saisissez une valeur 1,50 et 2,10";a.input.removeEventListener("focus",function(){input_selected(mass_el.comment)});a.input.addEventListener("focus",function(){input_selected_red(a.comment)})}
+function turn_input_correct(a){a.input.style.border="1px solid #BCC0C7";a.comment.style.color="#5f6368";a.alert.innerHTML="";a.input.removeEventListener("focus",function(){input_selected_red(a.comment)});a.input.addEventListener("focus",function(){input_selected(a.comment)})}input_selected(height_el.comment);test_deselection(height_el);input_selected(mass_el.comment);mass_el.input.addEventListener("focus",function(){input_selected(mass_el.comment)});mass_el.input.addEventListener("blur",function(){test_deselection(mass_el)});
+height_el.input.addEventListener("focus",function(){input_selected(height_el.comment)});height_el.input.addEventListener("blur",function(){test_deselection(height_el)});prepare_before_launch();window.addEventListener("resize",prepare_before_launch);</script></body></html>
